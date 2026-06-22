@@ -1,0 +1,43 @@
+# runner.conf.example
+# Copy to runner.conf and fill in values for your setup.
+# Lines starting with # are ignored.
+# Values here override built-in defaults but are overridden by CLI flags.
+
+# ─── Binary ───────────────────────────────────────────────────────────────────
+
+# Path to the binary to run.
+# Default: auto-detect "claude" in PATH, then ~/.local/bin/claude.
+# BIN=claude
+# BIN=/usr/local/bin/aider
+# BIN=/opt/homebrew/bin/llm
+
+# Extra arguments always passed to the binary.
+# BIN_ARGS=--dangerously-skip-permissions
+# BIN_ARGS=--no-auto-commits --model gpt-4o
+
+# Environment variables (repeatable, one per line).
+# BIN_ENV=CLAUDE_CODE_USE_FOUNDRY=1
+# BIN_ENV=ANTHROPIC_API_KEY=sk-ant-...
+# BIN_ENV=OPENAI_API_KEY=sk-...
+
+# ─── Session and directories ──────────────────────────────────────────────────
+
+# tmux session name (default: pr-run).
+# SESSION=my-project
+
+# Directory for status markers (default: /tmp/pr-status).
+# MARKER_DIR=/tmp/my-project-status
+
+# ─── Behaviour ────────────────────────────────────────────────────────────────
+
+# Enable non-interactive mode (-p). Required for parallel runs with Claude.
+# PRINT=true
+
+# Enable --verbose on the binary.
+# VERBOSE=false
+
+# Create an isolated git worktree per task (requires --work-dir from CLI).
+# WORKTREE=false
+
+# Show all tasks in a tiled pane grid instead of separate windows.
+# OVERVIEW=false
